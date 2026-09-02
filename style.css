@@ -1,1 +1,363 @@
+/* Root variables and color scheme */
+:root {
+  --bg: #0f1724;
+  --card: #0b1220;
+  --accent: #06b6d4;
+  --muted: #94a3b8;
+  --text: #ffffff;
+  --border: #1e293b;
+  --hover: #0d9488;
+  --gradient-start: #041025;
+  --gradient-end: #071729;
+  color-scheme: dark;
+}
 
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  background: linear-gradient(180deg, var(--gradient-start) 0%, var(--gradient-end) 100%);
+  color: var(--text);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+h1 {
+  font-size: 28px;
+}
+
+h2 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+h3 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+p {
+  margin: 0 0 12px 0;
+  color: var(--muted);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--hover);
+  text-decoration: underline;
+}
+
+code {
+  background: rgba(0, 0, 0, 0.3);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+  font-size: 13px;
+}
+
+/* Layout */
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 24px;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.brand {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.brand > div:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  min-width: 48px;
+  border-radius: 8px;
+  background: linear-gradient(135deg, var(--accent), #7c3aed);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--text);
+  font-size: 16px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 16px;
+  font-size: 14px;
+  transition: color 0.2s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* Hero Section */
+.hero {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 28px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+}
+
+.hero h1 {
+  margin: 0 0 8px 0;
+  font-size: 32px;
+}
+
+.hero p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* Main Grid Layout */
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+/* Card Component */
+.card {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(6, 182, 212, 0.1);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--text);
+}
+
+.card h3 {
+  margin-top: 0;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.card p {
+  margin-bottom: 12px;
+}
+
+.card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Projects */
+.project {
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.project:last-child {
+  border-bottom: none;
+}
+
+.project a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 15px;
+  display: block;
+  margin-bottom: 4px;
+  transition: color 0.2s ease;
+}
+
+.project a:hover {
+  color: var(--hover);
+}
+
+.project > div {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+/* Footer */
+footer {
+  margin-top: 36px;
+  color: var(--muted);
+  font-size: 14px;
+  text-align: center;
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+footer a {
+  color: var(--accent);
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: var(--hover);
+}
+
+/* Utility Classes */
+.text-muted {
+  color: var(--muted);
+}
+
+.text-accent {
+  color: var(--accent);
+}
+
+/* Contact Section */
+#contact {
+  text-align: center;
+}
+
+#contact p {
+  margin-bottom: 8px;
+}
+
+/* Responsive Design */
+@media (max-width: 880px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+
+  nav {
+    width: 100%;
+  }
+
+  nav a {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .container {
+    padding: 16px;
+    margin: 20px auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 12px;
+    margin: 16px auto;
+  }
+
+  header {
+    margin-bottom: 16px;
+  }
+
+  .hero {
+    padding: 16px;
+    margin-bottom: 16px;
+  }
+
+  .hero h1 {
+    font-size: 20px;
+  }
+
+  .hero p {
+    font-size: 14px;
+  }
+
+  .card {
+    padding: 12px;
+  }
+
+  nav a {
+    margin-right: 12px;
+    font-size: 12px;
+  }
+
+  .grid {
+    gap: 12px;
+  }
+
+  footer {
+    margin-top: 24px;
+    font-size: 12px;
+  }
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+
+  .card, .hero {
+    border: 1px solid #cccccc;
+    background: white;
+    color: black;
+  }
+
+  a {
+    color: #0066cc;
+  }
+}
